@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>MVVM property for ViewModel</Title>
+            <Author>Myself</Author>
+            <Shortcut>vmprop</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[        
+        #region $DESCRIPTION$ $TYPE$ $NAME$
+
+        /// <summary> /// $DESCRIPTION$ /// </summary>
+        private $TYPE$ _$NAME$;
+
+        /// <summary> /// $DESCRIPTION$ /// </summary>
+        public $TYPE$ $NAME$ { get => _$NAME$; set => Set(ref _$NAME$, value); }
+
+        #endregion
+        ]]>
+            </Code>
+ 	<Declarations>
+    		<Literal>
+      			<ID>NAME</ID>
+      			<ToolTip>Name of prop</ToolTip>
+      			<Default>NAME</Default>
+    		</Literal>
+		<Literal>
+      			<ID>TYPE</ID>
+      			<ToolTip>TYPE of prop</ToolTip>
+      			<Default>TYPE</Default>
+    		</Literal>
+		<Literal>
+      			<ID>TYPE</ID>
+      			<ToolTip>TYPE of prop</ToolTip>
+      			<Default>TYPE</Default>
+    		</Literal>
+		<Literal>
+      			<ID>DESCRIPTION</ID>
+      			<ToolTip>DESCRIPTION of prop</ToolTip>
+      			<Default> </Default>
+    		</Literal>
+  </Declarations>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
