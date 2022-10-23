@@ -1,42 +1,45 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
     <CodeSnippet Format="1.0.0">
         <Header>
             <Title>MVVM property for ViewModel</Title>
             <Author>Myself</Author>
-            <Shortcut>vmprop</Shortcut>
+            <Shortcut>vmcommand</Shortcut>
         </Header>
         <Snippet>
             <Code Language="CSharp">
                 <![CDATA[        
-        #region $DESCRIPTION$
+        #region команда $DESCRIPTION$
 
         /// <summary> /// $DESCRIPTION$ /// </summary>
-        private $TYPE$ _$NAME$;
+        private ICommand _$NAME$Command;
+        
+        /// <summary> /// $DESCRIPTION$ /// </summary>
+        public ICommand $NAME$Command => _$NAME$Command
+               ??=new RelayCommand(On$NAME$CommandExecuted,Can$NAME$CommandExecute);
+        
+        /// <summary> /// $DESCRIPTION$ /// </summary>
+        public bool Can$NAME$CommandExecute (object? p) => true;
 
         /// <summary> /// $DESCRIPTION$ /// </summary>
-        public $TYPE$ $NAME$ { get => _$NAME$; set => Set(ref _$NAME$, value); }
+        public void On$NAME$CommandExecuted (object? p)
+        {
+        }
 
-        #endregion
-        ]]>
+        #endregion]]>
             </Code>
  	<Declarations>
     		<Literal>
       			<ID>NAME</ID>
-      			<ToolTip>Name of prop</ToolTip>
+      			<ToolTip>Command name</ToolTip>
       			<Default>NAME</Default>
     		</Literal>
-		<Literal>
+		    <Literal>
       			<ID>TYPE</ID>
       			<ToolTip>TYPE of prop</ToolTip>
       			<Default>TYPE</Default>
     		</Literal>
-		<Literal>
-      			<ID>TYPE</ID>
-      			<ToolTip>TYPE of prop</ToolTip>
-      			<Default>TYPE</Default>
-    		</Literal>
-		<Literal>
+		    <Literal>
       			<ID>DESCRIPTION</ID>
       			<ToolTip>DESCRIPTION of prop</ToolTip>
       			<Default> </Default>
